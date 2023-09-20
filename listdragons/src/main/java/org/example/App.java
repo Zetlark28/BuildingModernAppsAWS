@@ -11,10 +11,7 @@ import com.amazonaws.services.s3.model.ExpressionType;
 import com.amazonaws.services.s3.model.InputSerialization;
 import com.amazonaws.services.s3.model.JSONInput;
 import com.amazonaws.services.s3.model.JSONOutput;
-import com.amazonaws.services.s3.model.OutputLocation;
 import com.amazonaws.services.s3.model.OutputSerialization;
-import com.amazonaws.services.s3.model.SelectObjectContentEvent.EndEvent;
-import com.amazonaws.services.s3.model.SelectObjectContentEvent.RecordsEvent;
 import com.amazonaws.services.s3.model.SelectObjectContentEvent.StatsEvent;
 import com.amazonaws.services.s3.model.SelectObjectContentEventVisitor;
 import com.amazonaws.services.s3.model.SelectObjectContentRequest;
@@ -25,12 +22,9 @@ import com.amazonaws.services.simplesystemsmanagement.model.GetParameterRequest;
 import com.amazonaws.services.simplesystemsmanagement.model.GetParameterResult;
 import com.amazonaws.util.IOUtils;
 import com.google.gson.Gson;
-import com.sun.org.apache.bcel.internal.generic.Select;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
-import java.util.Objects;
-import sun.nio.cs.StandardCharsets;
 
 public class App implements
     RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
@@ -122,7 +116,7 @@ public class App implements
 
       }
     }
-    return "select * from s3objects s";
+    return "select * from s3object s";
   }
 
 

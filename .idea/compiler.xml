@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="listdragons" />
+        <module name="somme-da-pagare-cedola" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="listdragons" target="1.5" />
+      <module name="somme-da-pagare-cedola" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
