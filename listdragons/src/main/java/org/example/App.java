@@ -24,6 +24,7 @@ import com.amazonaws.util.IOUtils;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.Map;
 
 public class App implements
@@ -43,6 +44,10 @@ public class App implements
     APIGatewayProxyResponseEvent response = new APIGatewayProxyResponseEvent();
     response.setStatusCode(200);
     response.setBody(new Gson().toJson(dragonData));
+    final Map<String, String> headers = new HashMap<>();
+    headers.put("Access-Control-Allow-Origin", "*");
+    headers.put("Content-Type", "application/json");
+    response.setHeaders(headers);
 
     return response;
   }
